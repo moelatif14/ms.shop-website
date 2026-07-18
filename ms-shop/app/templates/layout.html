@@ -2,44 +2,118 @@
 <html lang="en">
 
 <head>
-
-    <meta name="description"
-      content="MS.Shop - Elegant Modest Fashion">
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        {{ store_name }}
+        {% endblock %}
+    </title>
 
-    <title>{% block title %}{{ store_name }}{% endblock %}</title>
+    <meta name="description" content="{% block description %}Elegant modest fashion designed for confident everyday wear.{% endblock %}">
+    <meta name="keywords" content="MS.Shop, modest fashion, egypt, women's clothing, cardigan, sets">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="theme-color" content="#8B5E4A">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+          rel="stylesheet">
+
+    <!-- Custom CSS -->
     <link rel="stylesheet"
           href="{{ url_for('static', filename='css/style.css') }}">
 
+    {% block styles %}{% endblock %}
 </head>
 
 <body>
 
-{% include 'navbar.html' %}
+    <!-- ==========================
+            Navigation
+    =========================== -->
 
-<main>
+    {% include "navbar.html" %}
 
-{% block content %}
+    <!-- ==========================
+            Flash Messages
+    =========================== -->
 
-{% endblock %}
+    <div class="container mt-3">
 
-</main>
+        {% with messages = get_flashed_messages(with_categories=true) %}
 
-{% include 'footer.html' %}
+            {% if messages %}
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+                {% for category, message in messages %}
 
-<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+                    <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+
+                        {{ message }}
+
+                        <button type="button"
+                                class="btn-close"
+                                data-bs-dismiss="alert">
+                        </button>
+
+                    </div>
+
+                {% endfor %}
+
+            {% endif %}
+
+        {% endwith %}
+
+    </div>
+
+    <!-- ==========================
+            Main Content
+    =========================== -->
+
+    <main>
+
+        {% block content %}
+
+        {% endblock %}
+
+    </main>
+
+    <!-- ==========================
+            Footer
+    =========================== -->
+
+    {% include "footer.html" %}
+
+    <!-- Back To Top Button -->
+
+    <button id="backToTop" class="back-to-top">
+
+        <i class="bi bi-arrow-up"></i>
+
+    </button>
+
+    <!-- Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Main JS -->
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+    {% block scripts %}
+
+    {% endblock %}
 
 </body>
 

@@ -1,42 +1,318 @@
 {% extends "layout.html" %}
 
-{% block title %}MS.Shop{% endblock %}
+{% block title %}
+MS.Shop | Bring the Ms. out of You.
+{% endblock %}
 
 {% block content %}
 
+<!-- ==========================================
+Hero Section
+=========================================== -->
+
 <section class="hero-section">
-    <div class="hero-overlay">
-        <div class="hero-content">
 
-            <h1 class="hero-title">
-                Bring the Ms. out of You.
-            </h1>
-
-            <p class="hero-subtitle">
-                Elegant. Modest. Confident.
-            </p>
-
-            <a href="#" class="btn-ms">
-                Shop Collection
-            </a>
-
-        </div>
-    </div>
-</section>
-
-<section class="brand-section">
     <div class="container">
 
+        <div class="row align-items-center g-5">
+
+            <!-- Left -->
+
+            <div class="col-lg-6">
+
+                <span class="hero-label">
+
+                    NEW COLLECTION
+
+                </span>
+
+                <h1 class="hero-title">
+
+                    Bring the <span>Ms.</span><br>
+
+                    out of You.
+
+                </h1>
+
+                <p class="hero-text">
+
+                    Elegant modest fashion created for confident women.
+                    Timeless pieces designed to make you feel beautiful
+                    every single day.
+
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#" class="btn btn-ms">
+
+                        Shop Collection
+
+                    </a>
+
+                    <a href="#story" class="btn btn-outline-ms">
+
+                        Our Story
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Right -->
+
+            <div class="col-lg-6">
+
+                <div class="hero-image">
+
+                    <img
+                        src="{{ url_for('static', filename='images/banners/hero.jpg') }}"
+                        alt="MS.Shop Collection">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+Brand Story
+=========================================== -->
+
+<section id="story" class="py-5">
+
+    <div class="container text-center">
+
+        <span class="section-subtitle">
+
+            OUR STORY
+
+        </span>
+
         <h2 class="section-title">
-            Welcome to MS.Shop
+
+            Designed for Confidence
+
         </h2>
 
-        <p class="brand-description">
-            Discover timeless modest fashion designed to bring confidence,
-            elegance, and comfort to your everyday style.
+        <p class="mx-auto story-text">
+
+            At MS.Shop, we believe fashion should feel effortless,
+            elegant and timeless.
+
+            Every collection is carefully selected to inspire
+            confidence while embracing modesty and modern femininity.
+
         </p>
 
     </div>
+
+</section>
+
+<!-- ==========================================
+Categories
+=========================================== -->
+
+<section class="categories-section">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-subtitle">
+
+                SHOP BY CATEGORY
+
+            </span>
+
+            <h2 class="section-title">
+
+                Featured Collections
+
+            </h2>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-6">
+
+                <div class="category-card">
+
+                    <img src="{{ url_for('static', filename='images/categories/sets.jpg') }}">
+
+                    <div class="category-overlay">
+
+                        <h3>Sets</h3>
+
+                        <a href="#" class="btn btn-light">
+
+                            Explore
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="category-card">
+
+                    <img src="{{ url_for('static', filename='images/categories/cardigans.jpg') }}">
+
+                    <div class="category-overlay">
+
+                        <h3>Cardigans</h3>
+
+                        <a href="#" class="btn btn-light">
+
+                            Explore
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+Featured Products
+=========================================== -->
+
+<section class="products-section py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-subtitle">
+
+                BEST SELLERS
+
+            </span>
+
+            <h2 class="section-title">
+
+                Featured Pieces
+
+            </h2>
+
+        </div>
+
+        <div class="row g-4">
+
+            <!-- Product -->
+
+            {% for i in range(4) %}
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="product-card">
+
+                    <img src="{{ url_for('static', filename='images/products/product-placeholder.jpg') }}">
+
+                    <div class="product-info">
+
+                        <span class="product-category">
+
+                            New Arrival
+
+                        </span>
+
+                        <h5>
+
+                            Elegant Linen Set
+
+                        </h5>
+
+                        <p>
+
+                            850 EGP
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        <div class="text-center mt-5">
+
+            <a href="#" class="btn btn-ms">
+
+                View All Products
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+Instagram
+=========================================== -->
+
+<section class="instagram-section">
+
+    <div class="container">
+
+        <div class="instagram-box">
+
+            <span class="section-subtitle">
+
+                FOLLOW US
+
+            </span>
+
+            <h2 class="section-title">
+
+                @ms.shop
+
+            </h2>
+
+            <p>
+
+                Discover our newest arrivals,
+                styling inspiration,
+                and behind-the-scenes moments.
+
+            </p>
+
+            <a
+                href="https://instagram.com/ms.shop"
+                target="_blank"
+                class="btn btn-ms">
+
+                Visit Instagram
+
+            </a>
+
+        </div>
+
+    </div>
+
 </section>
 
 {% endblock %}

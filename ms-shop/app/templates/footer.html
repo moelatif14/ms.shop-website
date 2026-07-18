@@ -1,9 +1,185 @@
-<footer class="footer">
+<footer class="ms-footer">
+
     <div class="container">
 
-        <p>
-            © {{ current_year }} MS.Shop
-        </p>
+        <div class="row gy-5">
+
+            <!-- Brand -->
+
+            <div class="col-lg-4">
+
+                <a href="{{ url_for('main.home') }}" class="footer-logo">
+
+                    <span class="logo-main">MS.</span>
+                    <span class="logo-sub">Shop</span>
+
+                </a>
+
+                <p class="footer-description">
+
+                    Elegant modest fashion designed for confident women.
+                    Every piece is thoughtfully selected to blend style,
+                    comfort, and timeless elegance.
+
+                </p>
+
+                <div class="footer-social">
+
+                    <a href="https://instagram.com/ms.shop"
+                       target="_blank"
+                       aria-label="Instagram">
+
+                        <i class="bi bi-instagram"></i>
+
+                    </a>
+
+                    <!-- Future -->
+
+                    <a href="#" aria-label="TikTok">
+
+                        <i class="bi bi-tiktok"></i>
+
+                    </a>
+
+                    <a href="#" aria-label="Facebook">
+
+                        <i class="bi bi-facebook"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Shop -->
+
+            <div class="col-6 col-lg-2">
+
+                <h5>Shop</h5>
+
+                <ul class="footer-links">
+
+                    <li>
+
+                        <a href="#">New Arrivals</a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#">Sets</a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#">Cardigans</a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#">Best Sellers</a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <!-- Company -->
+
+            <div class="col-6 col-lg-2">
+
+                <h5>Company</h5>
+
+                <ul class="footer-links">
+
+                    <li>
+
+                        <a href="#">About Us</a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#">Contact</a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#">Privacy Policy</a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#">Terms & Conditions</a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <!-- Newsletter -->
+
+            <div class="col-lg-4">
+
+                <h5>Stay Connected</h5>
+
+                <p class="newsletter-text">
+
+                    Be the first to know about new collections,
+                    exclusive drops, and special offers.
+
+                </p>
+
+                <form class="newsletter-form">
+
+                    <div class="input-group">
+
+                        <input
+                            type="email"
+                            class="form-control"
+                            placeholder="Enter your email">
+
+                        <button
+                            class="btn btn-ms"
+                            type="button">
+
+                            Subscribe
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+        <hr class="footer-divider">
+
+        <div class="footer-bottom">
+
+            <p>
+
+                © {{ current_year }} MS.Shop.
+                All Rights Reserved.
+
+            </p>
+
+            <p>
+
+                Designed with ❤ in Egypt.
+
+            </p>
+
+        </div>
 
     </div>
+
 </footer>
